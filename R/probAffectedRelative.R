@@ -30,7 +30,7 @@
 #' @return Probability of a relative being affected with familial disease.
 #' @export
 probAffectedRelative <- function(m,k,r) {
-  llhd=function(p) {-sum(log(dbinom(m1,k1,p)/(1-pbinom(r-1,k1,p))))}
+  llhd=function(p) {-sum(log(dbinom(m,k,p)/(1-pbinom(r-1,k,p))))}
   pf=optimise(llhd,c(0,1))$min
   pf
 }
